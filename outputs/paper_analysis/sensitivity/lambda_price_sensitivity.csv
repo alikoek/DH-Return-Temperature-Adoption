@@ -1,0 +1,161 @@
+param,value,year,measure_id,measure,stock_weighted_share
+lambda,2.0,2030,1.3,M1: Flow Limiter,0.12235829414930051
+lambda,2.0,2030,1.5,M2: Heat Exchanger,0.06293918780435895
+lambda,2.0,2030,2.1,M3: Hydraulic Balancing,0.10137948273581694
+lambda,2.0,2030,2.3,M4: Pump Downsizing,0.10119118690493265
+lambda,2.0,2030,2.5,M5: Buffer Storage,0.10660014360733705
+lambda,2.0,2030,2.7,M6: User Behavior,0.13252650935593038
+lambda,2.0,2030,2.8,M7: Pump + Flow Limiter,0.10910820742962392
+lambda,2.0,2030,2.9,M8: Pump + Flow + Hydr. Bal.,0.08953189014420092
+lambda,2.0,2030,2.10,M9: Hydr. Bal. + Heat Exch.,0.0573810405330575
+lambda,2.0,2030,baseline,Baseline (Do Nothing),0.11698405733544126
+lambda,4.0,2030,1.3,M1: Flow Limiter,0.14083746436377
+lambda,4.0,2030,1.5,M2: Heat Exchanger,0.03930547729462424
+lambda,4.0,2030,2.1,M3: Hydraulic Balancing,0.09632083501182037
+lambda,4.0,2030,2.3,M4: Pump Downsizing,0.09554484788652867
+lambda,4.0,2030,2.5,M5: Buffer Storage,0.10629870221976982
+lambda,4.0,2030,2.7,M6: User Behavior,0.16664100448614277
+lambda,4.0,2030,2.8,M7: Pump + Flow Limiter,0.11245286937297135
+lambda,4.0,2030,2.9,M8: Pump + Flow + Hydr. Bal.,0.07885209610536172
+lambda,4.0,2030,2.10,M9: Hydr. Bal. + Heat Exch.,0.033882484217333184
+lambda,4.0,2030,baseline,Baseline (Do Nothing),0.12986421904167797
+lambda,8.0,2030,1.3,M1: Flow Limiter,0.1650182457946906
+lambda,8.0,2030,1.5,M2: Heat Exchanger,0.01600731283161789
+lambda,8.0,2030,2.1,M3: Hydraulic Balancing,0.08051120969665096
+lambda,8.0,2030,2.3,M4: Pump Downsizing,0.07703144465258167
+lambda,8.0,2030,2.5,M5: Buffer Storage,0.09330541827765923
+lambda,8.0,2030,2.7,M6: User Behavior,0.23554594011061553
+lambda,8.0,2030,2.8,M7: Pump + Flow Limiter,0.11283718731864871
+lambda,8.0,2030,2.9,M8: Pump + Flow + Hydr. Bal.,0.06414902869697664
+lambda,8.0,2030,2.10,M9: Hydr. Bal. + Heat Exch.,0.012961866742946984
+lambda,8.0,2030,baseline,Baseline (Do Nothing),0.1426323458776119
+energy_price,0.08,2030,1.3,M1: Flow Limiter,0.1501032920485752
+energy_price,0.08,2030,1.5,M2: Heat Exchanger,0.03228648632010425
+energy_price,0.08,2030,2.1,M3: Hydraulic Balancing,0.09314010363893385
+energy_price,0.08,2030,2.3,M4: Pump Downsizing,0.09380169047793303
+energy_price,0.08,2030,2.5,M5: Buffer Storage,0.10993839550352412
+energy_price,0.08,2030,2.7,M6: User Behavior,0.1748305393239931
+energy_price,0.08,2030,2.8,M7: Pump + Flow Limiter,0.1094432719138008
+energy_price,0.08,2030,2.9,M8: Pump + Flow + Hydr. Bal.,0.06947584003365967
+energy_price,0.08,2030,2.10,M9: Hydr. Bal. + Heat Exch.,0.02618733947574163
+energy_price,0.08,2030,baseline,Baseline (Do Nothing),0.14079304126373435
+energy_price,0.1,2030,1.3,M1: Flow Limiter,0.14083746436377
+energy_price,0.1,2030,1.5,M2: Heat Exchanger,0.03930547729462424
+energy_price,0.1,2030,2.1,M3: Hydraulic Balancing,0.09632083501182037
+energy_price,0.1,2030,2.3,M4: Pump Downsizing,0.09554484788652867
+energy_price,0.1,2030,2.5,M5: Buffer Storage,0.10629870221976982
+energy_price,0.1,2030,2.7,M6: User Behavior,0.16664100448614277
+energy_price,0.1,2030,2.8,M7: Pump + Flow Limiter,0.11245286937297135
+energy_price,0.1,2030,2.9,M8: Pump + Flow + Hydr. Bal.,0.07885209610536172
+energy_price,0.1,2030,2.10,M9: Hydr. Bal. + Heat Exch.,0.033882484217333184
+energy_price,0.1,2030,baseline,Baseline (Do Nothing),0.12986421904167797
+energy_price,0.12,2030,1.3,M1: Flow Limiter,0.134158917793657
+energy_price,0.12,2030,1.5,M2: Heat Exchanger,0.04497936602558739
+energy_price,0.12,2030,2.1,M3: Hydraulic Balancing,0.09814945910074117
+energy_price,0.12,2030,2.3,M4: Pump Downsizing,0.09632555451536423
+energy_price,0.12,2030,2.5,M5: Buffer Storage,0.10332125717581404
+energy_price,0.12,2030,2.7,M6: User Behavior,0.1604810941839975
+energy_price,0.12,2030,2.8,M7: Pump + Flow Limiter,0.11409816778353396
+energy_price,0.12,2030,2.9,M8: Pump + Flow + Hydr. Bal.,0.08577831405181682
+energy_price,0.12,2030,2.10,M9: Hydr. Bal. + Heat Exch.,0.04045980989682439
+energy_price,0.12,2030,baseline,Baseline (Do Nothing),0.12224805947266354
+subsidy,0.0,2030,1.3,M1: Flow Limiter,0.14083746436377
+subsidy,0.0,2030,1.5,M2: Heat Exchanger,0.03930547729462424
+subsidy,0.0,2030,2.1,M3: Hydraulic Balancing,0.09632083501182037
+subsidy,0.0,2030,2.3,M4: Pump Downsizing,0.09554484788652867
+subsidy,0.0,2030,2.5,M5: Buffer Storage,0.10629870221976982
+subsidy,0.0,2030,2.7,M6: User Behavior,0.16664100448614277
+subsidy,0.0,2030,2.8,M7: Pump + Flow Limiter,0.11245286937297135
+subsidy,0.0,2030,2.9,M8: Pump + Flow + Hydr. Bal.,0.07885209610536172
+subsidy,0.0,2030,2.10,M9: Hydr. Bal. + Heat Exch.,0.033882484217333184
+subsidy,0.0,2030,baseline,Baseline (Do Nothing),0.12986421904167797
+subsidy,0.3,2030,1.3,M1: Flow Limiter,0.1284873438324406
+subsidy,0.3,2030,1.5,M2: Heat Exchanger,0.0502231371473126
+subsidy,0.3,2030,2.1,M3: Hydraulic Balancing,0.09936983398046856
+subsidy,0.3,2030,2.3,M4: Pump Downsizing,0.09665742462623861
+subsidy,0.3,2030,2.5,M5: Buffer Storage,0.10056548317657504
+subsidy,0.3,2030,2.7,M6: User Behavior,0.15509281887494658
+subsidy,0.3,2030,2.8,M7: Pump + Flow Limiter,0.11512923303192388
+subsidy,0.3,2030,2.9,M8: Pump + Flow + Hydr. Bal.,0.09172958273318663
+subsidy,0.3,2030,2.10,M9: Hydr. Bal. + Heat Exch.,0.046810082026193245
+subsidy,0.3,2030,baseline,Baseline (Do Nothing),0.11593506057071425
+lambda,2.0,2040,1.3,M1: Flow Limiter,0.1262186262464521
+lambda,2.0,2040,1.5,M2: Heat Exchanger,0.05871109746986156
+lambda,2.0,2040,2.1,M3: Hydraulic Balancing,0.1003132117002544
+lambda,2.0,2040,2.3,M4: Pump Downsizing,0.10121215844286852
+lambda,2.0,2040,2.5,M5: Buffer Storage,0.10980802523978425
+lambda,2.0,2040,2.7,M6: User Behavior,0.13704365632192422
+lambda,2.0,2040,2.8,M7: Pump + Flow Limiter,0.10746066957757316
+lambda,2.0,2040,2.9,M8: Pump + Flow + Hydr. Bal.,0.0843758903062542
+lambda,2.0,2040,2.10,M9: Hydr. Bal. + Heat Exch.,0.05217758076009345
+lambda,2.0,2040,baseline,Baseline (Do Nothing),0.12267908393493411
+lambda,4.0,2040,1.3,M1: Flow Limiter,0.14701165613941655
+lambda,4.0,2040,1.5,M2: Heat Exchanger,0.03478866245534188
+lambda,4.0,2040,2.1,M3: Hydraulic Balancing,0.09254644442957602
+lambda,4.0,2040,2.3,M4: Pump Downsizing,0.09370430784939976
+lambda,4.0,2040,2.5,M5: Buffer Storage,0.11030336391923991
+lambda,4.0,2040,2.7,M6: User Behavior,0.17492378556486532
+lambda,4.0,2040,2.8,M7: Pump + Flow Limiter,0.10720224656112251
+lambda,4.0,2040,2.9,M8: Pump + Flow + Hydr. Bal.,0.07021918601690841
+lambda,4.0,2040,2.10,M9: Hydr. Bal. + Heat Exch.,0.02893382450150404
+lambda,4.0,2040,baseline,Baseline (Do Nothing),0.14036652256262566
+lambda,8.0,2040,1.3,M1: Flow Limiter,0.17211940470549136
+lambda,8.0,2040,1.5,M2: Heat Exchanger,0.013269856081209891
+lambda,8.0,2040,2.1,M3: Hydraulic Balancing,0.07318886652410843
+lambda,8.0,2040,2.3,M4: Pump Downsizing,0.07243363100424315
+lambda,8.0,2040,2.5,M5: Buffer Storage,0.09605740363793522
+lambda,8.0,2040,2.7,M6: User Behavior,0.24860369706278923
+lambda,8.0,2040,2.8,M7: Pump + Flow Limiter,0.10127921845503067
+lambda,8.0,2040,2.9,M8: Pump + Flow + Hydr. Bal.,0.05310941415725819
+lambda,8.0,2040,2.10,M9: Hydr. Bal. + Heat Exch.,0.010297179168686655
+lambda,8.0,2040,baseline,Baseline (Do Nothing),0.15964132920324725
+energy_price,0.08,2040,1.3,M1: Flow Limiter,0.15686101690615079
+energy_price,0.08,2040,1.5,M2: Heat Exchanger,0.028072912116548464
+energy_price,0.08,2040,2.1,M3: Hydraulic Balancing,0.08836564322387232
+energy_price,0.08,2040,2.3,M4: Pump Downsizing,0.09098450303532082
+energy_price,0.08,2040,2.5,M5: Buffer Storage,0.11351044574334059
+energy_price,0.08,2040,2.7,M6: User Behavior,0.1832545027963413
+energy_price,0.08,2040,2.8,M7: Pump + Flow Limiter,0.10322696238439526
+energy_price,0.08,2040,2.9,M8: Pump + Flow + Hydr. Bal.,0.060924022279828724
+energy_price,0.08,2040,2.10,M9: Hydr. Bal. + Heat Exch.,0.021950647389023182
+energy_price,0.08,2040,baseline,Baseline (Do Nothing),0.15284934412517853
+energy_price,0.1,2040,1.3,M1: Flow Limiter,0.14701165613941655
+energy_price,0.1,2040,1.5,M2: Heat Exchanger,0.03478866245534188
+energy_price,0.1,2040,2.1,M3: Hydraulic Balancing,0.09254644442957602
+energy_price,0.1,2040,2.3,M4: Pump Downsizing,0.09370430784939976
+energy_price,0.1,2040,2.5,M5: Buffer Storage,0.11030336391923991
+energy_price,0.1,2040,2.7,M6: User Behavior,0.17492378556486532
+energy_price,0.1,2040,2.8,M7: Pump + Flow Limiter,0.10720224656112251
+energy_price,0.1,2040,2.9,M8: Pump + Flow + Hydr. Bal.,0.07021918601690841
+energy_price,0.1,2040,2.10,M9: Hydr. Bal. + Heat Exch.,0.02893382450150404
+energy_price,0.1,2040,baseline,Baseline (Do Nothing),0.14036652256262566
+energy_price,0.12,2040,1.3,M1: Flow Limiter,0.13981720981039297
+energy_price,0.12,2040,1.5,M2: Heat Exchanger,0.040357774535989245
+energy_price,0.12,2040,2.1,M3: Hydraulic Balancing,0.0951289854312384
+energy_price,0.12,2040,2.3,M4: Pump Downsizing,0.09518112435010241
+energy_price,0.12,2040,2.5,M5: Buffer Storage,0.10750346718621762
+energy_price,0.12,2040,2.7,M6: User Behavior,0.16848866191454026
+energy_price,0.12,2040,2.8,M7: Pump + Flow Limiter,0.10956881843037412
+energy_price,0.12,2040,2.9,M8: Pump + Flow + Hydr. Bal.,0.07726630521913519
+energy_price,0.12,2040,2.10,M9: Hydr. Bal. + Heat Exch.,0.03505290197621985
+energy_price,0.12,2040,baseline,Baseline (Do Nothing),0.13163475114578987
+subsidy,0.0,2040,1.3,M1: Flow Limiter,0.14701165613941655
+subsidy,0.0,2040,1.5,M2: Heat Exchanger,0.03478866245534188
+subsidy,0.0,2040,2.1,M3: Hydraulic Balancing,0.09254644442957602
+subsidy,0.0,2040,2.3,M4: Pump Downsizing,0.09370430784939976
+subsidy,0.0,2040,2.5,M5: Buffer Storage,0.11030336391923991
+subsidy,0.0,2040,2.7,M6: User Behavior,0.17492378556486532
+subsidy,0.0,2040,2.8,M7: Pump + Flow Limiter,0.10720224656112251
+subsidy,0.0,2040,2.9,M8: Pump + Flow + Hydr. Bal.,0.07021918601690841
+subsidy,0.0,2040,2.10,M9: Hydr. Bal. + Heat Exch.,0.02893382450150404
+subsidy,0.0,2040,baseline,Baseline (Do Nothing),0.14036652256262566
+subsidy,0.3,2040,1.3,M1: Flow Limiter,0.13364343101045167
+subsidy,0.3,2040,1.5,M2: Heat Exchanger,0.04561779375049225
+subsidy,0.3,2040,2.1,M3: Hydraulic Balancing,0.09698904771338927
+subsidy,0.3,2040,2.3,M4: Pump Downsizing,0.09607787852185636
+subsidy,0.3,2040,2.5,M5: Buffer Storage,0.10480127843745671
+subsidy,0.3,2040,2.7,M6: User Behavior,0.16274952956738356
+subsidy,0.3,2040,2.8,M7: Pump + Flow Limiter,0.11120744399278398
+subsidy,0.3,2040,2.9,M8: Pump + Flow + Hydr. Bal.,0.0834540595863392
+subsidy,0.3,2040,2.10,M9: Hydr. Bal. + Heat Exch.,0.04108795425137049
+subsidy,0.3,2040,baseline,Baseline (Do Nothing),0.12437158316847655
