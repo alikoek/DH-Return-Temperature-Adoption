@@ -1,11 +1,12 @@
 """
-Step 3 of 4: the figures of the paper.
+Step 4 of 5: the figures of the paper.
 
-Figures 2-8 and the appendix figures A.1 and B.1 (Figure 1, the framework
-diagram, is not data-driven). File names match the figure numbers in the
-paper. Every figure reads only the CSVs written by run_scenarios.py and
-run_paper_analysis.py (paths are printed for traceability), except Figure 4,
-which also reads the measure workbook, and writes PDF and PNG files to
+Figures 2-7 and the supplementary figures S1-S3 (Figure 1, the framework
+diagram, is not data-driven). The file names are historical; README.md maps
+each file to its figure number in the paper. Every figure reads only the CSVs
+written by run_scenarios.py and run_paper_analysis.py (paths are printed for
+traceability), except Figure 3 (figure4_misalignment), which also reads the
+measure workbook, and writes PDF and PNG files to
 outputs/figures/.
 
 Inputs
@@ -196,7 +197,7 @@ def make_fig3_stock_adoption():
     band to full height, so the wide bar carries the same quantities on a
     stretched axis and the individual measures become legible.
     """
-    print("\nFigure 3: diffusion-adjusted stock adoption")
+    print("\nFigure S1: diffusion-adjusted stock adoption")
     diff = load_csv(PAPER / 'base_case' / 'overall_shares_with_diffusion.csv')
     years = (2030, 2040)
     measures = [m for m in ALL_IDS if m != 'baseline']
@@ -272,7 +273,7 @@ def make_fig3_stock_adoption():
 # -----------------------------------------------------------------------------
 
 def make_fig5_cost_decomposition():
-    print("\nFigure 5: cost decomposition")
+    print("\nFigure 4: cost decomposition")
     cd = load_csv(PAPER / 'base_case' / 'cost_decomposition_2030.csv')
     cd = cd.set_index('measure_id').loc[ALL_IDS].reset_index()
     cd = cd.sort_values('total_cost')
@@ -358,7 +359,7 @@ def _dose_panel(ax, sweep, xcol, xscale, anchor, label_x, gap, lift=0.0):
 
 
 def make_fig6_tariff_dose_response():
-    print("\nFigure 6: tariff dose-response (change vs no tariff, 2030)")
+    print("\nFigure 5: tariff dose-response (change vs no tariff, 2030)")
     lin = load_csv(SCEN_SWEEP / 'sweep_linear.csv')
     stp = load_csv(SCEN_SWEEP / 'sweep_stepped.csv')
     print(f"  src: {SCEN_NONE / 'results_aggregated_2030.csv'} (zero anchor)")
@@ -407,7 +408,7 @@ ACTION_LABELS = ['No action', 'Maintenance', 'Moderate renovation',
 
 
 def make_fig7_renovation_effects():
-    print("\nFigure 7: renovation effects")
+    print("\nFigure 6: renovation effects")
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.3), sharey=True)
     for panel, (ax, year) in enumerate(zip(axes, (2030, 2040))):
         df = load_csv(SCEN_NONE / f'results_renovation_analysis_{year}.csv')
@@ -441,7 +442,7 @@ def make_fig7_renovation_effects():
 # -----------------------------------------------------------------------------
 
 def make_fig8_sensitivity_panel():
-    print("\nFigure 8: sensitivity panels")
+    print("\nFigure 7: sensitivity panels")
     sens = load_csv(PAPER / 'sensitivity' / 'lambda_price_sensitivity.csv')
     m6 = load_csv(PAPER / 'm6_sensitivity' / 'm6_sensitivity_summary.csv')
 
@@ -479,11 +480,11 @@ def make_fig8_sensitivity_panel():
 
 
 # -----------------------------------------------------------------------------
-# Figure B1 (appendix): full vs restricted measure set
+# Figure S3 (supplementary material): full vs restricted measure set
 # -----------------------------------------------------------------------------
 
 def make_figB1_measure_set_comparison():
-    print("\nFigure B1: measure-set comparison")
+    print("\nFigure S3: measure-set comparison")
     fig, ax = plt.subplots(figsize=(5.6, 2.9))
     full = load_csv(SCEN_NONE / 'results_aggregated_2030.csv')
     restr = load_csv(SCEN_RESTR_NONE / 'results_aggregated_2030.csv')
@@ -519,7 +520,7 @@ def make_figB1_measure_set_comparison():
 # -----------------------------------------------------------------------------
 
 def make_figA1_nl_rank():
-    print("\nFigure A.1: nested-logit rank robustness")
+    print("\nFigure S2: nested-logit rank robustness")
     df = load_csv(PAPER / 'nested_logit' / 'nl_robustness.csv')
     df = df[df['year'] == 2030]
     thetas = [1.0, 0.7, 0.5, 0.3]
@@ -565,7 +566,7 @@ def make_fig_misalignment():
     capital), so the return-temperature benefit the network wants is decoupled
     from what drives uptake.
     """
-    print("\nFigure 4: misalignment (delta-RT vs adoption)")
+    print("\nFigure 3: misalignment (delta-RT vs adoption)")
     agg = load_csv(SCEN_NONE / 'results_aggregated_2030.csv')
     row = agg[agg['building_class'] == 'OVERALL (stock-weighted)'].iloc[0]
     # Mean return-temperature reduction and investment across the nine

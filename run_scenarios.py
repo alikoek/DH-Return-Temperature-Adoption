@@ -1,5 +1,5 @@
 """
-Step 1 of 4: motivational-tariff scenarios.
+Step 1 of 5: motivational-tariff scenarios.
 
 For each choice set and stock year (2030, 2040), runs the reference economics
 (no subsidy, lambda = 4, 0.10 EUR/kWh, r = 5 %) under
@@ -11,7 +11,7 @@ For each choice set and stock year (2030, 2040), runs the reference economics
 Choice sets:
   all_measures        all nine measures + do-nothing (main analysis)
   restricted          without pump downsizing, buffer storage and user
-                      behavior (Appendix B)
+                      behavior (supplementary material, Section S3)
 
 Outputs (outputs/scenarios/<choice set>/):
   per_tariff/<tariff>/results_renovation_analysis_<year>.csv  per variant

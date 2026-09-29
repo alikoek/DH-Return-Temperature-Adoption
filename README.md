@@ -1,33 +1,37 @@
-# Adoption of return-temperature measures in district heating
+# Building-owner choice of return-temperature measures in district heating
 
 Code and data for the paper
 
 > Kök A, Kranzl L, Haas R, Catal J. *Reducing return temperatures in district
-> heating: How motivational tariffs and subsidies shape the adoption of
-> building-side measures.* Submitted to Applied Energy, 2026.
+> heating: How motivational tariffs and subsidies shape the choice of
+> building-side measures.* 2026.
 
 The model predicts which building-side measures owners of district-heated
 multi-family buildings choose, and how motivational return-temperature tariffs,
 investment subsidies and building renovation change that choice. It couples
 building-stock data from the Invert/EE-Lab model, simulated effects of nine
-building-side measures, and a multinomial-logit adoption model, applied to nine
+building-side measures, and a multinomial-logit choice model, applied to nine
 Austrian multi-family archetypes in five renovation states for 2030 and 2040.
+It also values each measure's return-temperature reduction for the network
+with published cost-reduction gradients and compares it with the owner's
+cost change.
 
 The scripts in this repository reproduce every data-driven figure and table
-of the paper.
+of the paper, including the supplementary material.
 
 ## Quick start
 
 ```bash
 pip install -r requirements.txt
 
-python run_scenarios.py        # tariff scenarios for both choice sets
-python run_paper_analysis.py   # reference case, sensitivities, nested logit
-python make_figures.py         # Figures 2-8, A.1, B.1  -> outputs/figures/
-python make_tables.py          # Tables 1, 2, 4, 5      -> outputs/tables/
+python run_scenarios.py           # tariff scenarios for both choice sets
+python run_paper_analysis.py      # reference case, sensitivities, nested logit
+python compute_network_value.py   # network value, owner cost change, tariff transfers
+python make_figures.py            # Figures 2-7, S1-S3  -> outputs/figures/
+python make_tables.py             # Tables 1, 2, 4, 5   -> outputs/tables/
 ```
 
-The four steps take a few seconds each. They must run in this order,
+The five steps take a few seconds each. They must run in this order,
 because each step reads the outputs of the previous ones.
 `run_paper_analysis.py` also checks that its reference case agrees with the
 no-tariff run of `run_scenarios.py`. Tested with Python 3.13, numpy 2.1,
@@ -44,35 +48,41 @@ without running the model.
 | `data/invert_building_stock_2030.csv`, `..._2040.csv` | Building stock by archetype and renovation state (Invert/EE-Lab) |
 | `load_data.py` | Reads the measure workbook |
 | `load_invert_data.py` | Reads the building-stock files and maps them to the archetypes |
-| `interpolate_measures.py` | Transfers measure effects to renovated buildings (paper Eq. 4) |
-| `motivational_tariff.py` | Linear and stepped bonus/malus tariffs (Eq. 7) |
-| `analyze_renovations.py` | Total annual heating cost and logit model for one variant (Eqs. 1-3) |
-| `logit_model.py` | Multinomial logit with cost-relative utilities (Eq. 3) |
-| `nested_logit.py` | Nested logit for the robustness check (Eq. 8) |
-| `scenario.py` | Runs all variants and aggregates to archetypes and the stock (Eq. 5) |
+| `interpolate_measures.py` | Transfers measure effects to renovated buildings (paper Eq. 5) |
+| `motivational_tariff.py` | Linear and stepped bonus/malus tariffs (Eq. 8) |
+| `analyze_renovations.py` | Total annual heating cost and logit model for one variant (Eqs. 1, 2 and 4) |
+| `logit_model.py` | Multinomial logit with cost-relative utilities (Eq. 4) |
+| `nested_logit.py` | Nested logit for the robustness check (Eq. S1, supplementary material) |
+| `scenario.py` | Runs all variants and aggregates to archetypes and the stock (Eqs. 6 and 7) |
+| `compute_network_value.py` | Network value of the return-temperature reduction (Eq. 3), owner cost change and tariff transfers |
 | `run_scenarios.py`, `run_paper_analysis.py` | Analysis runs |
 | `make_figures.py`, `make_tables.py` | Figures and LaTeX tables of the paper |
 | `outputs/scenarios/` | Results per choice set and tariff; tariff sweeps; expected return-temperature reduction |
-| `outputs/paper_analysis/` | Reference case, cost decomposition, sensitivities, nested logit, diffusion |
+| `outputs/paper_analysis/` | Reference case, cost decomposition, network value, sensitivities, nested logit, diffusion |
 | `outputs/tables/` | Tables of the paper as LaTeX |
 
 ## Where each result of the paper comes from
+
+The figure file names are historical and do not follow the figure numbers of
+the paper; the table below maps them.
 
 | Paper | Generated file | Underlying results |
 |---|---|---|
 | Table 1 | `outputs/tables/table_archetypes.tex` | input data |
 | Table 2 | `outputs/tables/table_measures.tex` | input data |
-| Table 4 | `outputs/tables/table_main_results.tex` | `paper_analysis/base_case/overall_shares_with_diffusion.csv` |
+| Table 4 | `outputs/tables/table_main_results.tex` | `paper_analysis/base_case/overall_shares_with_diffusion.csv`, `paper_analysis/base_case/network_value_2030.csv` |
 | Table 5 | `outputs/tables/table_nested_logit.tex` | `paper_analysis/nested_logit/nl_robustness.csv` |
 | Figure 2 | `figure2_baseline_adoption` | `scenarios/all_measures/per_tariff/none/`, `paper_analysis/base_case/` |
-| Figure 3 | `figure3_stock_adoption` | `paper_analysis/base_case/overall_shares_with_diffusion.csv` |
-| Figure 4 | `figure4_misalignment` | `scenarios/all_measures/per_tariff/none/`, input data |
-| Figure 5 | `figure5_cost_decomposition` | `paper_analysis/base_case/cost_decomposition_2030.csv` |
-| Figure 6 | `figure6_tariff_dose_response` | `scenarios/all_measures/sweep_summary/` |
-| Figure 7 | `figure7_renovation_effects` | `scenarios/all_measures/per_tariff/none/results_renovation_analysis_*.csv` |
-| Figure 8 | `figure8_sensitivity` | `paper_analysis/sensitivity/`, `paper_analysis/m6_sensitivity/` |
-| Figure A.1 | `figureA1_nl_rank` | `paper_analysis/nested_logit/nl_robustness.csv` |
-| Figure B.1 | `figureB1_measure_set_comparison` | `scenarios/restricted/per_tariff/none/` |
+| Figure 3 | `figure4_misalignment` | `scenarios/all_measures/per_tariff/none/`, input data |
+| Figure 4 | `figure5_cost_decomposition` | `paper_analysis/base_case/cost_decomposition_2030.csv` |
+| Figure 5 | `figure6_tariff_dose_response` | `scenarios/all_measures/sweep_summary/` |
+| Figure 6 | `figure7_renovation_effects` | `scenarios/all_measures/per_tariff/none/results_renovation_analysis_*.csv` |
+| Figure 7 | `figure8_sensitivity` | `paper_analysis/sensitivity/`, `paper_analysis/m6_sensitivity/` |
+| Figure S1 | `figure3_stock_adoption` | `paper_analysis/base_case/overall_shares_with_diffusion.csv` |
+| Figure S2 | `figureA1_nl_rank` | `paper_analysis/nested_logit/nl_robustness.csv` |
+| Figure S3 | `figureB1_measure_set_comparison` | `scenarios/restricted/per_tariff/none/` |
+| Network value, owner cost change (Table 4, Section 5.1) | | `paper_analysis/base_case/network_value_2030.csv` |
+| Tariff transfers (Section 5.3) | | `paper_analysis/base_case/network_value_2030.csv` (`linear_transfer_EUR`, `stepped_transfer_EUR`) |
 | Expected return-temperature reduction (Section 5.3) | | `scenarios/all_measures/expected_rt_reduction.csv` |
 | Subsidy results (Section 5.4) | | `paper_analysis/sensitivity/lambda_price_sensitivity.csv` |
 

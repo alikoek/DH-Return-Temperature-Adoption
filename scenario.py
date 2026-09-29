@@ -3,7 +3,7 @@ Shared scenario machinery: run the logit model for every (archetype x
 renovation variant), aggregate to archetypes and to the whole stock, and write
 the result tables.
 
-Aggregation (paper Eq. 5): variant shares are weighted by the number of
+Aggregation (paper Eq. 6): variant shares are weighted by the number of
 buildings each variant represents in the Invert building stock.
 """
 
@@ -31,7 +31,7 @@ BASE_ECONOMICS = {
     'discount_rate': DISCOUNT_RATE,
 }
 
-# Cumulative share of the stock that has faced a decision occasion (Eq. 6)
+# Cumulative share of the stock that has faced a decision occasion (Eq. 7)
 DIFFUSION_RATES = {2030: 0.20, 2040: 0.60}
 
 
